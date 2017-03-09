@@ -18,7 +18,7 @@
 
 #include "lcm_drv.h"
 #include "ddp_hal.h"
-#include "fbconfig_kdebug_x.h"
+#include "../drivers/misc/mediatek/video/mt6797/videox/fbconfig_kdebug_x.h"
 
 #ifdef __cplusplus
 extern "C" {

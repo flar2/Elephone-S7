@@ -23,7 +23,7 @@
 #include <linux/mmc/sd.h>
 #endif
 
-#include <mt_sd.h>
+#include "../drivers/mmc/host/mediatek/mt6797/mt_sd.h"
 
 #ifndef FPGA_PLATFORM
 extern void msdc_set_driving(struct msdc_host *host, struct msdc_hw *hw, bool sd_18);

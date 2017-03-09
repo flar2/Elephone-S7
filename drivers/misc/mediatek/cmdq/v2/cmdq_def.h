@@ -22,7 +22,7 @@
 #ifdef CMDQ_COMMON_ENG_SUPPORT
 #include "cmdq_engine_common.h"
 #else
-#include "cmdq_engine.h"
+#include "../drivers/misc/mediatek/cmdq/v2/mt6797/cmdq_engine.h"
 #endif
 
 #define CMDQ_SPECIAL_SUBSYS_ADDR (99)

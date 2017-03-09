@@ -18,7 +18,7 @@
 #include <mach/mt_reg_base.h>
 #endif
 #include <mt-plat/sync_write.h>
-#include "platform_uart.h"
+#include "../drivers/misc/mediatek/uart/mt6797/platform_uart.h"
 
 /*---------------------------------------------------------------------------*/
 #if defined(ENABLE_VFIFO_DEBUG)

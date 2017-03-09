@@ -24,7 +24,7 @@
 
 #include "mt-plat/sync_write.h"
 #include "mtk_thermal_typedefs.h"
-#include "mt_gpufreq.h"
+#include "../drivers/misc/mediatek/base/power/mt6797/mt_gpufreq.h"
 
 /*
 Bank0 : BIG     (TS_MCU1)

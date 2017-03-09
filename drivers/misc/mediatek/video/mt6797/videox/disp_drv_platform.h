@@ -25,9 +25,9 @@
 #include "mt-plat/sync_write.h"
 #include "disp_assert_layer.h"
 
-#include "ddp_hal.h"
-#include "ddp_drv.h"
-#include "ddp_path.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_hal.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_drv.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_path.h"
 
 /* #include <mach/mt6585_pwm.h> */
 /* #include <mach/boot.h> */

@@ -14,7 +14,7 @@
 #ifndef __M4U_PGTABLE_H__
 #define __M4U_PGTABLE_H__
 
-#include "m4u_reg.h"
+#include "../drivers/misc/mediatek/m4u/mt6797/m4u_reg.h"
 
 /* ================================================================= */
 /* 2 level pagetable: pgd -> pte */

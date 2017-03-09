@@ -16,8 +16,8 @@
 
 #include "extd_multi_control.h"
 #include "disp_drv_platform.h"
-#include "external_display.h"
-#include "extd_platform.h"
+#include "../drivers/misc/mediatek/ext_disp/mt6797/external_display.h"
+#include "../drivers/misc/mediatek/ext_disp/mt6797/extd_platform.h"
 #include "extd_log.h"
 #include "mtk_ovl.h"
 

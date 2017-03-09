@@ -17,8 +17,8 @@
 #include <mt-plat/sync_write.h>
 #include <linux/types.h>
 /* #include <mach/mt_reg_base.h> */
-#include "ddp_info.h"
-#include "ddp_hal.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_info.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_hal.h"
 
 extern unsigned long long rdma_start_time[];
 extern unsigned long long rdma_end_time[];

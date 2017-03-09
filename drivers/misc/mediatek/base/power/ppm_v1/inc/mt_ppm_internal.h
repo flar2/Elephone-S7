@@ -30,8 +30,8 @@ extern "C" {
 #include <linux/printk.h>
 #include <linux/sched.h>
 
-#include "mach/mt_ppm_api.h"
-#include "mt_ppm_platform.h"
+#include "../drivers/misc/mediatek/include/mt-plat/mt6797/include/mach/mt_ppm_api.h"
+#include "../drivers/misc/mediatek/base/power/ppm_v1/src/mach/mt6797/mt_ppm_platform.h"
 
 /*==============================================================*/
 /* Definitions							*/

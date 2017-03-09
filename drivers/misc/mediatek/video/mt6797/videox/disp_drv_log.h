@@ -13,8 +13,8 @@
 
 #ifndef __DISP_DRV_LOG_H__
 #define __DISP_DRV_LOG_H__
-#include "display_recorder.h"
-#include "ddp_debug.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/display_recorder.h"
+#include "../drivers/misc/mediatek/video/mt6797/dispsys/ddp_debug.h"
 
 #if 0 /*set 1 to output log to mobilelog */
 #define DISP_LOG_PRINT(level, sub_module, fmt, arg...)      \

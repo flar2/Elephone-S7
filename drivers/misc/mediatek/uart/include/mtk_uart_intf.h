@@ -14,7 +14,7 @@
 #ifndef __MTK_UART_INTF_H__
 #define __MTK_UART_INTF_H__
 
-#include "platform_uart.h"
+#include "../drivers/misc/mediatek/uart/mt6797/platform_uart.h"
 #include <linux/platform_device.h>
 /*---------------------------------------------------------------------------*/
 /* fiq debugger */

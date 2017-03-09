@@ -154,7 +154,7 @@ extern void __iomem *i2c1_base;
 #include "ssusb_usb3_sys_csr_c_header.h"
 #include "ssusb_usb2_csr_c_header.h"
 #include "ssusb_sifslv_ippc_c_header.h"
-#include "mtk-phy.h"
+#include "../drivers/misc/mediatek/mu3phy/mtk-phy.h"
 
 #ifdef EXT_VBUS_DET
 #define FPGA_REG 0xf0008098
