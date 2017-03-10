@@ -95,3 +95,9 @@ config MTK_CONSUMER_PARTIAL_UPDATE_SUPPORT
 	default n
 	help
 	  This enable support display partial support.
+
+config MTK_KCAL_CTRL
+	bool "MTK_KCAL_CTRL"
+	default y
+	help
+		Enable RGB color calibration.

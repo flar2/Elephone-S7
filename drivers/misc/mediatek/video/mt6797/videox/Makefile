@@ -38,6 +38,8 @@ obj-$(CONFIG_MTK_FB) += mtkfb_console.o		\
 #obj-y += mtkfb_dummy.o
 #endif
 
+obj-$(CONFIG_MTK_KCAL_CTRL) += mtk_kcal_ctrl.o
+
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/video/include/     \
              -I$(srctree)/drivers/misc/mediatek/video/common/   \
              -I$(srctree)/drivers/misc/mediatek/video/common/rdma10/ \
