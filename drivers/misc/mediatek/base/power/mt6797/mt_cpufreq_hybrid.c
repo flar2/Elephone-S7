@@ -759,14 +759,14 @@ do {								\
 #define cspm_debug(fmt, args...)	pr_debug("[CPUHVFS] " fmt, ##args)
 
 #define cspm_dbgx(flag, fmt, args...)			\
-do {							\
+/*do {							\
 	if (dbgx_log_en & DLF_##flag)			\
 		cspm_err(fmt, ##args);			\
 	else if (dbgx_log_en & (DLF_##flag << 16))	\
 		cspm_debug(fmt, ##args);		\
 	else						\
 		;					\
-} while (0)
+} while (0)*/
 
 #define wait_complete_us(condition, delay, timeout)		\
 ({								\

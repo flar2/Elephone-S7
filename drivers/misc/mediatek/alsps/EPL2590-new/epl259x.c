@@ -159,9 +159,9 @@ static epl_raw_data	gRawData;
 #define APS_DBG(fmt, args...)    	    printk(KERN_INFO fmt, ##args)
 #else
 #define APS_FUN(f)              	  	printk(APS_TAG"%s\n", __FUNCTION__)
-#define APS_ERR(fmt, args...)    	    printk(APS_TAG"%s %d : "fmt, __FUNCTION__, __LINE__, ##args)
-#define APS_LOG(fmt, args...)    	    printk(APS_TAG fmt, ##args)
-#define APS_DBG(fmt, args...)    	    printk(fmt, ##args)
+#define APS_ERR(fmt, args...)    	    pr_debug(APS_TAG"%s %d : "fmt, __FUNCTION__, __LINE__, ##args)
+#define APS_LOG(fmt, args...)    	    pr_debug(APS_TAG fmt, ##args)
+#define APS_DBG(fmt, args...)    	    pr_debug(fmt, ##args)
 #endif
 static int epl_sensor_i2c_probe(struct i2c_client *client, const struct i2c_device_id *id);
 static int epl_sensor_i2c_remove(struct i2c_client *client);

@@ -544,8 +544,8 @@ HPS_END:
 		mutex_unlock(&hps_ctxt.para_lock);
 		if (action_print) {
 			hps_set_funct_ctrl();
-			if (action_break)
-				hps_warn
+			if (action_break) {
+				/*hps_warn
 				    ("(0x%X)%s action break!! (%u)(%u)(%u) %s %s%s-->%s%s (%u)(%u)(%u)(%u) %s\n",
 				     ((hps_ctxt.hps_func_control << 12) | hps_sys.action_id),
 				     str_online, hps_ctxt.cur_loads,
@@ -554,16 +554,16 @@ HPS_END:
 				     str_ref_limit, str_ref_base,
 				     hps_sys.up_load_avg,
 				     hps_sys.down_load_avg, hps_sys.tlp_avg, hps_sys.rush_cnt,
-				     str_target);
-			else {
-				hps_warn
+				     str_target);*/
+			} else {
+				/*hps_warn
 				    ("(0x%X)%s action end (%u)(%u)(%u) %s %s%s (%u)(%u)(%u)(%u) %s\n",
 				     ((hps_ctxt.hps_func_control << 12) | hps_sys.action_id),
 				     str_online, hps_ctxt.cur_loads,
 				     hps_ctxt.cur_tlp, hps_ctxt.cur_iowait, str_hvytsk,
 				     str_criteria_limit, str_criteria_base, hps_sys.up_load_avg,
 				     hps_sys.down_load_avg, hps_sys.tlp_avg, hps_sys.rush_cnt,
-				     str_target);
+				     str_target);*/
 				trace_hps_update(hps_sys.action_id, str_online, hps_ctxt.cur_loads,
 						 hps_ctxt.cur_tlp, hps_ctxt.cur_iowait, str_hvytsk,
 						 str_criteria_limit, str_criteria_base,
