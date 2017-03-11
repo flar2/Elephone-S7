@@ -76,7 +76,7 @@ obj-$(CONFIG_MTK_I2C)  += i2c/
 endif
 obj-$(CONFIG_MTK_LEDS)	+= leds/
 obj-$(CONFIG_MTK_VIBRATOR)	+= vibrator/
-obj-$(CONFIG_MTK_SM100)	+= tc1_interface/vib_drv/
+#obj-$(CONFIG_MTK_SM100)	+= tc1_interface/vib_drv/
 obj-$(CONFIG_MTK_ACCDET)	+= accdet/
 obj-$(CONFIG_MTK_ECCCI_C2K) += c2k_usb/
 obj-$(CONFIG_MTK_IRTX_SUPPORT) += irtx/
@@ -183,9 +183,9 @@ obj-$(CONFIG_MTK_MJC_DRIVER)	+= mjc/
 obj-$(CONFIG_MD32_SUPPORT)     += md32/
 obj-$(CONFIG_HAVE_XLOG_SUPPORT) += xlog/
 obj-$(CONFIG_MTK_EMI_MBW) += emi_mbw/
-ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/tc1_interface/),)
-obj-$(CONFIG_MTK_TC1_FEATURE)   += tc1_interface/
-endif
+#ifneq ($(wildcard $(srctree)/drivers/misc/mediatek/tc1_interface/),)
+#obj-$(CONFIG_MTK_TC1_FEATURE)   += tc1_interface/
+#endif
 obj-$(CONFIG_MTK_BTCVSD) += btcvsd/
 obj-$(CONFIG_MTK_MTD_NAND) += nand/
 obj-$(CONFIG_MTK_DUM_CHAR) += dum-char/
