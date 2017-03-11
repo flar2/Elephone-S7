@@ -1177,7 +1177,7 @@ s32 gt1x_touch_event_handler(u8 * data, struct input_dev * dev, struct input_dev
 
 	GTP_DEBUG_FUNC();
 	touch_num = data[0] & 0x0f;
-	printk("gt1x_touch_event_handler  touch_num = %x.\n",touch_num);
+	pr_debug("gt1x_touch_event_handler  touch_num = %x.\n",touch_num);
 	if (touch_num > GTP_MAX_TOUCH) {
 		GTP_ERROR("Illegal finger number!");
 		printk("Illegal finger number!");

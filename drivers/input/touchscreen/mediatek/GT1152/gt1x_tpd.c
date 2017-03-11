@@ -793,7 +793,7 @@ static int tpd_event_handler(void *unused)
             goto exit_work_func;;
 		}
 		finger = point_data[0];
-		printk("tpd_event_handler  finger = %x.\n",finger);
+		pr_debug("tpd_event_handler  finger = %x.\n",finger);
 
 		/* response to a ic request */
 		if (finger == 0x00) 
@@ -826,7 +826,7 @@ static int tpd_event_handler(void *unused)
 #else
 		ret = gt1x_touch_event_handler(point_data, tpd->dev, NULL);
 #endif
-		printk("--lan-- ret = %d.\n",ret);
+		//printk("--lan-- ret = %d.\n",ret);
 /*		if (ret) {
 			gt1x_irq_enable();
 			mutex_unlock(&i2c_access);

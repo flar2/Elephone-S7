@@ -90,7 +90,7 @@
 #define GTP_ESD_PROTECT       1	// esd-protection module (with a cycle of 2 seconds)
 #define GTP_CHARGER_SWITCH    1	// charger plugin & plugout detect
 
-#define GTP_DEBUG_ON          1	// enable log printed by GTP_DEBUG(...)
+#define GTP_DEBUG_ON          0 // enable log printed by GTP_DEBUG(...)
 #define GTP_DEBUG_ARRAY_ON    0
 #define GTP_DEBUG_FUNC_ON     0
 
