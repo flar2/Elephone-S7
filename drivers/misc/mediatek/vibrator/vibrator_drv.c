@@ -241,12 +241,10 @@ static ssize_t store_vibr_on(struct device *dev, struct device_attribute *attr,
 
 static DEVICE_ATTR(vibr_on, 0220, NULL, store_vibr_on);
 
-//default is 6 in device tree
-static int vib_vol = 6;
 static ssize_t show_vibr_vol(struct device *dev, struct device_attribute *attr,
 								char *buf)
 {
-	return scnprintf(buf, PAGE_SIZE, "%d\n", vib_vol);
+	return scnprintf(buf, PAGE_SIZE, "%d\n", pmic_get_register_value(PMIC_RG_VIBR_VOSEL));
 }
 
 static ssize_t store_vibr_vol(struct device *dev, struct device_attribute *attr,
@@ -255,8 +253,7 @@ static ssize_t store_vibr_vol(struct device *dev, struct device_attribute *attr,
 	int val;
 	sscanf(buf, "%d ", &val);
 	if (val >= 0 && val < 8) {
-		vib_vol = val;
-		pmic_set_register_value(PMIC_RG_VIBR_VOSEL, vib_vol);
+		pmic_set_register_value(PMIC_RG_VIBR_VOSEL, val);
 	}
 
 	return size;
