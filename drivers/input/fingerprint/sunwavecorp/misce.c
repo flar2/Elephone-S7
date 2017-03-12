@@ -150,13 +150,22 @@ EXPORT_SYMBOL_GPL(sunwave_wakeupSys);
 irqreturn_t sunwave_irq_hander_default_process(int irq, void* dev)
 {
     sunwave_sensor_t* sunwave = (sunwave_sensor_t*) dev ;
+    char* finger[2] = { "SPI_STATE=finger", NULL };
+
 #if __SUNWAVE_QUIK_WK_CPU_EN
     //add for open core begin
     //schedule_work(&core_work);
     queue_work(core_queue, &core_work);
     //add for open core end
 #endif
-    schedule_work(&sunwave->irq_work);
+    //schedule_work(&sunwave->irq_work);
+
+    if (sunwave->finger && sunwave->finger->irq_hander) {
+        sunwave->finger->irq_hander(&sunwave->spi);
+    }
+
+    kobject_uevent_env(&sunwave->spi->dev.kobj, KOBJ_CHANGE, finger);
+
     wake_lock_timeout(&sunwave->wakelock, msecs_to_jiffies(5000));
     return IRQ_HANDLED;
 }
@@ -164,11 +173,20 @@ EXPORT_SYMBOL_GPL(sunwave_irq_hander_default_process);
 
 void sunwave_irq_hander_default_process_2(void)
 {
+    char* finger[2] = { "SPI_STATE=finger", NULL };
+
     sunwave_sensor_t* sunwave = get_current_sunwave();
-    schedule_work(&sunwave->irq_work);
+    //schedule_work(&sunwave->irq_work);
+
+    if (sunwave->finger && sunwave->finger->irq_hander) {
+        sunwave->finger->irq_hander(&sunwave->spi);
+    }
+    kobject_uevent_env(&sunwave->spi->dev.kobj, KOBJ_CHANGE, finger);
+
     wake_lock_timeout(&sunwave->wakelock, msecs_to_jiffies(5000));
 }
 EXPORT_SYMBOL_GPL(sunwave_irq_hander_default_process_2);
+
 
 void sunwave_irq_hander_default_work(struct work_struct* work)
 {
@@ -197,7 +215,7 @@ int sunwave_irq_request(sunwave_sensor_t* sunwave)
     if (sunwave->finger->gpio_irq > 0) {
 #endif
         sunwave->spi->irq = sunwave->standby_irq;
-        INIT_WORK(&sunwave->irq_work, sunwave_irq_hander_default_work);
+        //INIT_WORK(&sunwave->irq_work, sunwave_irq_hander_default_work);
         status = request_irq(sunwave->standby_irq, sunwave_irq_hander_default_process,  IRQF_TRIGGER_FALLING, "sw_irq",
                              sunwave);
 
